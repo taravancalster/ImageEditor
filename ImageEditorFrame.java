@@ -6,7 +6,14 @@ import java.io.*;
 import javax.imageio.*; 
  
 public class ImageEditorFrame extends JFrame{    
+	
+	ImageEditorPanel panel = new ImageEditorPanel();
+	
 	public ImageEditorFrame(){ 
+	
+	add(panel);
+	
+	setDummyImage();
 	
 	//Titel hinzufügen
 	setTitle("Image Editor");
@@ -14,4 +21,14 @@ public class ImageEditorFrame extends JFrame{
 	setSize(400,  300);       
 	setVisible(true);    
 	}
+	
+	
+	private void setDummyImage(){    
+		BufferedImage bufferedImage =           
+			new BufferedImage(400, 300, BufferedImage.TYPE_INT_RGB);    
+		Graphics g = bufferedImage.getGraphics();    
+		g.setColor(Color.YELLOW);    
+		g.fillOval(10, 10, 380, 280);    
+		panel.setImage(bufferedImage); 
+	} 
 } 
