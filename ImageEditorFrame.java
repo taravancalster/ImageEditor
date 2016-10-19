@@ -6,7 +6,10 @@ import java.io.*;
 import javax.imageio.*; 
  
 public class ImageEditorFrame extends JFrame{    
-	public ImageEditorFrame(){       
+	public ImageEditorFrame(){ 
+	
+	//Titel hinzufügen
+	setTitle("Image Editor");
 	setDefaultCloseOperation(EXIT_ON_CLOSE);       
 	setSize(400,  300);       
 	setVisible(true);    
